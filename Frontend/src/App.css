@@ -1,0 +1,96 @@
+/* Reset & Box Model */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fullscreen Base */
+html, body, #root, main {
+  height: 100%;
+  width: 100%;
+}
+
+/* Main Layout */
+main {
+  display: flex;
+  gap: 1rem;
+  padding: 1.5rem;
+  background-color: #121821; /* Very dark slate blue base */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Shared Styles */
+main .left,
+main .right {
+  flex: 1;
+  border-radius: 0.8rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Left Pane – Code */
+main .left {
+  position: relative;
+  background-color: #1a2230; /* Cold, muted navy background */
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+.left .code, .code pre, .code pre code {
+  flex: 1;
+  background-color: #1d2635; /* Darker blue-gray inner area */
+  color: #c0c8d0; /* Soft, cold-toned off-white text */
+  padding: 1rem;
+  font-family: 'Fira Code', Consolas, Menlo, monospace;
+  font-size: 0.95rem;
+  overflow: auto;
+}
+
+/* Scrollbar Styling */
+code::-webkit-scrollbar {
+  width: 8px;
+}
+code::-webkit-scrollbar-thumb {
+  background-color: #4a5768;
+  border-radius: 4px;
+}
+code:hover::-webkit-scrollbar-thumb {
+  background-color: #6b7a8d;
+}
+
+/* Review Button – Darker & Cooler */
+main .left .review {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  background-color: #334157; /* Deep, cool slate */
+  color: #dde2ea; /* Muted pale text */
+  padding: 0.6rem 2rem;
+  border: none;
+  border-radius: 0.8rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s, transform 0.2s;
+}
+main .left .review:hover {
+  background-color: #4a5a6d; /* Slightly lighter on hover */
+  transform: translateY(-2px);
+}
+
+/* Right Pane – Review Output */
+main .right {
+  background-color: #1f293a; /* Cool midnight blue */
+  padding: 1rem 1.5rem;
+  color: #d1d9e0; /* Gentle light gray text */
+  font-size: 1.1rem;
+  overflow-y: auto;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.6);
+  line-height: 1.6;
+}
+.right h2 {
+  margin-bottom: 1rem;
+  color: #e0e7ff; /* Soft light blue for headings */
+}
